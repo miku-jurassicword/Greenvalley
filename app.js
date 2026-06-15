@@ -8,462 +8,7 @@
 /* =====================
    RECEITAS PADRÃO DO SITE
    ===================== */
-const receitasPadrao = [
-  {
-    id: 1,
-    nome: "Smoothie Detox de Frutas Vermelhas",
-    categoria: "cafe",
-    emoji: "🫐",
-    bg: "linear-gradient(135deg,#fce7f3,#fbcfe8)",
-    desc: "Bebida rica em antioxidantes, vitamina C e fibras. Ótima opção para começar o dia com energia e leveza.",
-    tempo: "5 min",
-    porcoes: "1 porção",
-    dificuldade: "easy",
-    kcal: 180, proteina: 6, carbs: 32, gordura: 3,
-    ingredientes: [
-      "1 xícara de morangos frescos",
-      "½ xícara de mirtilo",
-      "½ banana congelada",
-      "200 ml de leite de amêndoas",
-      "1 col. sopa de linhaça moída",
-      "1 col. sopa de mel (opcional)",
-      "Gelo a gosto",
-    ],
-    passos: [
-      "Lave bem as frutas vermelhas em água corrente.",
-      "Coloque todos os ingredientes no liquidificador.",
-      "Bata por 2 minutos até obter uma mistura lisa e homogênea.",
-      "Se ficar muito espesso, adicione um pouco mais de leite vegetal.",
-      "Sirva imediatamente em copo gelado e aproveite!",
-    ]
-  },
-  {
-    id: 2,
-    nome: "Overnight Oats com Banana e Mel",
-    categoria: "cafe",
-    emoji: "🥣",
-    bg: "linear-gradient(135deg,#fff7ed,#ffedd5)",
-    desc: "Aveia de geladeira preparada na véspera. Cremosa, nutritiva e cheia de fibras para um café da manhã completo.",
-    tempo: "5 min + noite",
-    porcoes: "1 porção",
-    dificuldade: "easy",
-    kcal: 340, proteina: 12, carbs: 58, gordura: 6,
-    ingredientes: [
-      "½ xícara de aveia em flocos",
-      "200 ml de iogurte natural desnatado",
-      "100 ml de leite desnatado",
-      "1 banana em rodelas",
-      "1 col. sopa de mel",
-      "1 col. chá de canela em pó",
-      "Mix de castanhas para finalizar",
-    ],
-    passos: [
-      "Em um pote com tampa, misture a aveia, o leite e o iogurte.",
-      "Adicione a canela e o mel, misturando bem.",
-      "Tampe e deixe na geladeira por pelo menos 6 horas (ou a noite toda).",
-      "Na manhã seguinte, coloque as rodelas de banana por cima.",
-      "Finalize com as castanhas e mais um fio de mel.",
-    ]
-  },
-  {
-    id: 3,
-    nome: "Tapioca de Queijo Branco com Tomate",
-    categoria: "cafe",
-    emoji: "🫓",
-    bg: "linear-gradient(135deg,#fef9c3,#fef08a)",
-    desc: "Tapioca crocante recheada com queijo branco fresco, tomate e ervas. Sem glúten e rica em proteínas.",
-    tempo: "10 min",
-    porcoes: "1 unidade",
-    dificuldade: "easy",
-    kcal: 210, proteina: 14, carbs: 22, gordura: 7,
-    ingredientes: [
-      "4 col. sopa de goma de tapioca hidratada",
-      "50g de queijo branco em cubos",
-      "2 tomates-cereja cortados ao meio",
-      "Folhas de manjericão fresco",
-      "1 col. chá de azeite de oliva",
-      "Sal rosa e pimenta-do-reino a gosto",
-    ],
-    passos: [
-      "Aqueça uma frigideira antiaderente em fogo médio.",
-      "Espalhe a goma de tapioca formando um disco uniforme.",
-      "Espere 2 minutos até firmar. Vire com cuidado.",
-      "Distribua o queijo, o tomate e o manjericão sobre metade.",
-      "Dobre ao meio e deixe por mais 1 minuto.",
-      "Regue com azeite e sirva quente.",
-    ]
-  },
-  {
-    id: 4,
-    nome: "Panqueca de Aveia e Banana",
-    categoria: "cafe",
-    emoji: "🥞",
-    bg: "linear-gradient(135deg,#e8f5f4,#c8e8e5)",
-    desc: "Panquecas fofas feitas apenas com aveia e banana, sem farinha e sem açúcar. Deliciosas e muito nutritivas!",
-    tempo: "15 min",
-    porcoes: "6 unidades",
-    dificuldade: "easy",
-    kcal: 280, proteina: 9, carbs: 48, gordura: 5,
-    ingredientes: [
-      "2 bananas maduras",
-      "2 ovos inteiros",
-      "½ xícara de aveia em flocos finos",
-      "1 col. chá de extrato de baunilha",
-      "1 col. chá de canela em pó",
-      "Raspas de meio limão",
-      "Frutas frescas para acompanhar",
-    ],
-    passos: [
-      "Amasse bem as bananas com um garfo até virar uma pasta.",
-      "Adicione os ovos e misture.",
-      "Incorpore a aveia, a baunilha, a canela e as raspas de limão.",
-      "Deixe a massa descansar por 5 minutos.",
-      "Em frigideira com fio de azeite, coloque colheradas da massa.",
-      "Cozinhe 2 minutos de cada lado. Sirva com frutas frescas.",
-    ]
-  },
-  {
-    id: 5,
-    nome: "Bowl de Quinoa com Legumes Assados",
-    categoria: "almoco",
-    emoji: "🥙",
-    bg: "linear-gradient(135deg,#e8f5f4,#b8dcd8)",
-    desc: "Bowl completo com quinoa proteica, legumes assados no forno e molho tahine. Uma refeição poderosa e colorida.",
-    tempo: "35 min",
-    porcoes: "2 porções",
-    dificuldade: "medium",
-    kcal: 420, proteina: 18, carbs: 52, gordura: 14,
-    ingredientes: [
-      "1 xícara de quinoa",
-      "1 abobrinha em cubos",
-      "1 cenoura em rodelas",
-      "1 pimentão vermelho em tiras",
-      "1 beterraba pequena em cubos",
-      "2 col. sopa de azeite de oliva",
-      "3 col. sopa de tahine",
-      "Suco de 1 limão",
-      "Sal, pimenta e páprica a gosto",
-      "Folhas de rúcula para finalizar",
-    ],
-    passos: [
-      "Cozinhe a quinoa em 2 xícaras de água por 15 minutos.",
-      "Tempere os legumes com azeite, sal, pimenta e páprica.",
-      "Asse os legumes a 200°C por 20 minutos, virando na metade.",
-      "Prepare o molho: misture tahine, suco de limão, sal e 3 col. de água.",
-      "Monte o bowl com a quinoa, os legumes e as folhas de rúcula.",
-      "Finalize com o molho de tahine e sirva.",
-    ]
-  },
-  {
-    id: 6,
-    nome: "Frango Grelhado com Legumes no Vapor",
-    categoria: "almoco",
-    emoji: "🍗",
-    bg: "linear-gradient(135deg,#fef3e2,#fde8c8)",
-    desc: "Peito de frango temperado com ervas frescas e legumes no vapor. Proteico, leve e perfeito para o almoço.",
-    tempo: "30 min",
-    porcoes: "2 porções",
-    dificuldade: "easy",
-    kcal: 380, proteina: 42, carbs: 24, gordura: 10,
-    ingredientes: [
-      "2 filés de peito de frango (180g cada)",
-      "1 brócolis em buquês",
-      "1 xícara de ervilha fresca",
-      "2 cenouras em palitos",
-      "3 dentes de alho amassados",
-      "Suco de 1 limão",
-      "2 col. sopa de azeite de oliva",
-      "Alecrim, tomilho e sal",
-      "Arroz integral para acompanhar",
-    ],
-    passos: [
-      "Marine o frango com alho, limão, azeite e ervas por 15 minutos.",
-      "Aqueça a grelha ou frigideira em fogo alto.",
-      "Grelhe o frango por 6-7 minutos de cada lado.",
-      "Enquanto isso, cozinhe os legumes no vapor por 8 minutos.",
-      "Tempere os legumes com azeite, sal e ervas a gosto.",
-      "Sirva com arroz integral e regue com suco de limão fresco.",
-    ]
-  },
-  {
-    id: 7,
-    nome: "Risoto de Brócolis com Cogumelos",
-    categoria: "almoco",
-    emoji: "🍲",
-    bg: "linear-gradient(135deg,#e8f5ee,#c8e8d8)",
-    desc: "Risoto cremoso de arroz integral com brócolis e cogumelos shiitake. Reconfortante, saudável e cheio de sabor.",
-    tempo: "45 min",
-    porcoes: "3 porções",
-    dificuldade: "medium",
-    kcal: 390, proteina: 14, carbs: 62, gordura: 10,
-    ingredientes: [
-      "1½ xícara de arroz arbóreo integral",
-      "200g de cogumelos shiitake fatiados",
-      "2 xícaras de brócolis em buquês pequenos",
-      "1 cebola pequena picada",
-      "3 dentes de alho",
-      "1L de caldo de legumes quente",
-      "½ xícara de vinho branco seco",
-      "3 col. sopa de queijo parmesão",
-      "2 col. sopa de azeite de oliva",
-      "Sal, pimenta e noz-moscada",
-    ],
-    passos: [
-      "Em panela grande, refogue a cebola e o alho no azeite por 3 minutos.",
-      "Acrescente o arroz e mexa por 2 minutos até ficar translúcido.",
-      "Adicione o vinho branco e mexa até evaporar.",
-      "Acrescente o caldo quente, concha a concha, mexendo sempre.",
-      "Após 25 minutos, adicione os cogumelos e o brócolis.",
-      "Cozinhe por mais 10 minutos. Finalize com parmesão e noz-moscada.",
-    ]
-  },
-  {
-    id: 8,
-    nome: "Bowl de Atum com Arroz Integral",
-    categoria: "almoco",
-    emoji: "🐟",
-    bg: "linear-gradient(135deg,#e8f4fd,#c8e0f0)",
-    desc: "Bowl fresco e proteico com atum, arroz integral, abacate e legumes. Prático, nutritivo e delicioso.",
-    tempo: "20 min",
-    porcoes: "2 porções",
-    dificuldade: "easy",
-    kcal: 440, proteina: 32, carbs: 48, gordura: 13,
-    ingredientes: [
-      "1 lata de atum em água (escorrido)",
-      "2 xícaras de arroz integral cozido",
-      "1 abacate maduro",
-      "½ pepino em rodelas finas",
-      "1 cenoura ralada",
-      "Edamame cozido a gosto",
-      "2 col. sopa de shoyu light",
-      "1 col. sopa de gergelim torrado",
-      "Suco de 1 limão",
-      "Coentro ou cebolinha",
-    ],
-    passos: [
-      "Cozinhe o arroz integral conforme as instruções da embalagem.",
-      "Corte o abacate em cubos e tempere com limão.",
-      "Prepare o molho misturando shoyu com gergelim e cebolinha.",
-      "Monte o bowl dividindo o arroz entre dois recipientes.",
-      "Arrume o atum, abacate, pepino, cenoura e edamame.",
-      "Regue com o molho e finalize com gergelim e coentro.",
-    ]
-  },
-  {
-    id: 9,
-    nome: "Sopa de Lentilha com Gengibre",
-    categoria: "jantar",
-    emoji: "🍵",
-    bg: "linear-gradient(135deg,#fef8ec,#fdefd0)",
-    desc: "Sopa quente, reconfortante e anti-inflamatória. Rica em proteínas vegetais e perfeita para as noites frias.",
-    tempo: "40 min",
-    porcoes: "4 porções",
-    dificuldade: "easy",
-    kcal: 290, proteina: 16, carbs: 44, gordura: 5,
-    ingredientes: [
-      "1½ xícara de lentilha vermelha",
-      "1 lata de tomate pelado",
-      "1 cebola grande picada",
-      "4 dentes de alho",
-      "1 pedaço de gengibre fresco (3cm)",
-      "1 col. chá de cúrcuma",
-      "1 col. chá de cominho",
-      "1 col. chá de páprica defumada",
-      "1L de caldo de legumes",
-      "Folhas de coentro e limão para servir",
-    ],
-    passos: [
-      "Refogue a cebola, o alho e o gengibre ralado no azeite.",
-      "Adicione as especiarias e mexa por 1 minuto.",
-      "Acrescente a lentilha, o tomate e o caldo de legumes.",
-      "Cozinhe em fogo médio por 25 minutos, mexendo às vezes.",
-      "Bata metade da sopa no liquidificador para deixar cremosa.",
-      "Ajuste o sal, sirva com coentro e suco de limão.",
-    ]
-  },
-  {
-    id: 10,
-    nome: "Salmão com Aspargos e Limão",
-    categoria: "jantar",
-    emoji: "🐠",
-    bg: "linear-gradient(135deg,#fff4f0,#ffe8de)",
-    desc: "Filé de salmão rico em ômega-3 com aspargos grelhados e molho de limão siciliano. Elegante e nutritivo.",
-    tempo: "25 min",
-    porcoes: "2 porções",
-    dificuldade: "medium",
-    kcal: 460, proteina: 38, carbs: 12, gordura: 28,
-    ingredientes: [
-      "2 filés de salmão (150g cada)",
-      "1 maço de aspargos frescos",
-      "2 dentes de alho fatiados",
-      "Suco e raspas de 1 limão siciliano",
-      "2 col. sopa de azeite de oliva extra virgem",
-      "1 col. sopa de alcaparras",
-      "Endro (dill) fresco a gosto",
-      "Sal e pimenta-do-reino",
-    ],
-    passos: [
-      "Tempere o salmão com sal, pimenta e raspas de limão.",
-      "Aqueça azeite em frigideira e grelhe o salmão por 4 min de cada lado.",
-      "Na mesma frigideira, doure o alho e os aspargos por 5 minutos.",
-      "Adicione o suco de limão e as alcaparras. Mexa por 1 minuto.",
-      "Monte o prato com o salmão sobre os aspargos.",
-      "Regue com o molho da frigideira e finalize com endro fresco.",
-    ]
-  },
-  {
-    id: 11,
-    nome: "Omelete de Espinafre e Queijo",
-    categoria: "jantar",
-    emoji: "🍳",
-    bg: "linear-gradient(135deg,#e8f5f4,#c8e8e5)",
-    desc: "Omelete fofinho recheado com espinafre refogado e queijo branco. Rápido, proteico e perfeito para o jantar.",
-    tempo: "15 min",
-    porcoes: "1 porção",
-    dificuldade: "easy",
-    kcal: 310, proteina: 22, carbs: 8, gordura: 21,
-    ingredientes: [
-      "3 ovos inteiros",
-      "2 xícaras de espinafre fresco",
-      "50g de queijo branco em cubos",
-      "2 dentes de alho",
-      "1 col. sopa de azeite de oliva",
-      "Sal, pimenta e noz-moscada",
-      "Tomate-cereja para acompanhar",
-    ],
-    passos: [
-      "Refogue o alho no azeite por 1 minuto. Adicione o espinafre.",
-      "Mexa por 2 minutos até murchar. Tempere com sal e noz-moscada.",
-      "Bata os ovos com sal e pimenta em um bowl.",
-      "Em frigideira antiaderente, despeje os ovos e mexa levemente.",
-      "Quando ainda cremoso, coloque o espinafre e o queijo em metade.",
-      "Dobre e sirva com tomates-cereja.",
-    ]
-  },
-  {
-    id: 12,
-    nome: "Tofu Grelhado com Curry de Vegetais",
-    categoria: "jantar",
-    emoji: "🥢",
-    bg: "linear-gradient(135deg,#f3e8ff,#e8d4f8)",
-    desc: "Tofu firme marinado e grelhado com curry aromático de legumes e leite de coco. Proteína vegetal no seu melhor.",
-    tempo: "40 min",
-    porcoes: "2 porções",
-    dificuldade: "medium",
-    kcal: 350, proteina: 20, carbs: 30, gordura: 16,
-    ingredientes: [
-      "300g de tofu firme",
-      "1 xícara de leite de coco light",
-      "1 cebola picada",
-      "2 dentes de alho",
-      "1 col. sopa de curry em pó",
-      "½ col. chá de cúrcuma",
-      "1 pimentão vermelho",
-      "1 abobrinha pequena",
-      "2 col. sopa de shoyu",
-      "Arroz basmati para acompanhar",
-      "Coentro e pimenta caiena",
-    ],
-    passos: [
-      "Pressione o tofu para remover o excesso de água. Corte em cubos.",
-      "Marine o tofu no shoyu e curry por 15 minutos.",
-      "Grelhe os cubos de tofu em frigideira quente até dourar.",
-      "Refogue a cebola e o alho. Adicione as especiarias.",
-      "Acrescente os legumes, o leite de coco e cozinhe por 15 minutos.",
-      "Sirva o curry sobre arroz basmati com tofu e coentro.",
-    ]
-  },
-  {
-    id: 13,
-    nome: "Mix de Castanhas e Frutas Secas",
-    categoria: "lanche",
-    emoji: "🥜",
-    bg: "linear-gradient(135deg,#fef3e2,#fde8c8)",
-    desc: "Mix energético e nutritivo de castanhas, nozes e frutas secas. Perfeito para carregar e comer a qualquer hora.",
-    tempo: "5 min",
-    porcoes: "4 porções",
-    dificuldade: "easy",
-    kcal: 240, proteina: 7, carbs: 22, gordura: 15,
-    ingredientes: [
-      "¼ xícara de castanha de caju",
-      "¼ xícara de nozes picadas",
-      "¼ xícara de amêndoas",
-      "2 col. sopa de uva-passa",
-      "2 col. sopa de cranberry seco",
-      "2 col. sopa de damasco seco picado",
-      "1 col. sopa de semente de girassol",
-      "Canela em pó a gosto",
-    ],
-    passos: [
-      "Misture todas as castanhas em um bowl.",
-      "Adicione as frutas secas e as sementes.",
-      "Polvilhe canela e misture bem.",
-      "Divida em 4 porções individuais.",
-      "Guarde em potes com tampa por até 2 semanas.",
-    ]
-  },
-  {
-    id: 14,
-    nome: "Homus com Palitos de Legumes",
-    categoria: "lanche",
-    emoji: "🫘",
-    bg: "linear-gradient(135deg,#fef8ec,#fdefd0)",
-    desc: "Homus cremoso caseiro com azeite, tahine e cominho. Acompanhado de palitos de cenoura, pepino e salsão.",
-    tempo: "15 min",
-    porcoes: "4 porções",
-    dificuldade: "easy",
-    kcal: 190, proteina: 8, carbs: 20, gordura: 9,
-    ingredientes: [
-      "1 lata de grão-de-bico cozido",
-      "3 col. sopa de tahine",
-      "Suco de 2 limões",
-      "2 dentes de alho",
-      "3 col. sopa de azeite de oliva",
-      "½ col. chá de cominho",
-      "Sal a gosto",
-      "Cenoura, pepino e salsão para mergulhar",
-      "Páprica e azeite para finalizar",
-    ],
-    passos: [
-      "Escorra o grão-de-bico e reserve o líquido.",
-      "Coloque o grão-de-bico no processador com tahine e alho.",
-      "Adicione o limão, o cominho, o sal e o azeite.",
-      "Processe, adicionando o líquido reservado aos poucos.",
-      "Bata por 4 minutos até ficar muito cremoso.",
-      "Sirva com páprica, azeite e os palitos de legumes.",
-    ]
-  },
-  {
-    id: 15,
-    nome: "Iogurte Grego com Granola Caseira",
-    categoria: "lanche",
-    emoji: "🍨",
-    bg: "linear-gradient(135deg,#e8f4fd,#c8e0f0)",
-    desc: "Parfait de iogurte grego proteico com granola caseira crocante, frutas frescas e fio de mel. Irresistível!",
-    tempo: "10 min",
-    porcoes: "2 porções",
-    dificuldade: "easy",
-    kcal: 290, proteina: 15, carbs: 38, gordura: 8,
-    ingredientes: [
-      "1 xícara de iogurte grego natural",
-      "½ xícara de granola crocante",
-      "1 xícara de morango fatiado",
-      "½ xícara de mirtilo",
-      "2 col. sopa de mel puro",
-      "1 col. sopa de coco ralado",
-      "Hortelã para decorar",
-    ],
-    passos: [
-      "Divida o iogurte grego em dois copos ou bowls.",
-      "Adicione metade da granola em cada porção.",
-      "Distribua os morangos e o mirtilo por cima.",
-      "Regue com o mel e polvilhe o coco ralado.",
-      "Decore com folhinhas de hortelã.",
-      "Sirva imediatamente para manter a granola crocante.",
-    ]
-  },
-];
-
+let receitas = [];
 /* =====================
    ESTADO DO SITE
    Guarda o que o usuário está fazendo agora
@@ -1081,3 +626,88 @@ document.addEventListener("keydown", e => {
 renderCards();  // mostra os cards de receita
 renderJardim(); // monta o jardim do minijogo
 atualizarPontos(); // inicia a pontuação zerada
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* FILTROS */
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      categoriaAtiva = btn.dataset.cat;
+      renderCards();
+    });
+  });
+
+  /* BUSCA */
+  const search = document.getElementById("searchInput");
+  if (search) {
+    search.addEventListener("input", e => {
+      buscaAtual = e.target.value;
+      renderCards();
+    });
+  }
+
+  /* MODAL FECHA CLICK FORA */
+  const modal = document.getElementById("modalBackdrop");
+  if (modal) {
+    modal.addEventListener("click", e => {
+      if (e.target === modal) fecharModal();
+    });
+  }
+
+  /* ADMIN FECHA CLICK FORA */
+  const admin = document.getElementById("adminOverlay");
+  if (admin) {
+    admin.addEventListener("click", e => {
+      if (e.target === admin) fecharAdmin();
+    });
+  }
+
+  /* TECLAS */
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      fecharModal();
+      fecharAdmin();
+    }
+
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a") {
+      e.preventDefault();
+      abrirAdmin();
+    }
+  });
+
+});
+function openCredits() {
+  document.getElementById("creditsModalBox").classList.add("active");
+}
+
+function closeCredits() {
+  document.getElementById("creditsModalBox").classList.remove("active");
+}
+
+// fecha só clicando no fundo
+document.addEventListener("click", (e) => {
+  const modal = document.getElementById("creditsModalBox");
+  if (!modal) return;
+
+  if (e.target === modal) {
+    closeCredits();
+  }
+});
+
+// ESC fecha também
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeCredits();
+});
+function renderRecipes() {
+  const grid = document.getElementById("recipesGrid");
+  grid.innerHTML = "";
+
+  if (recipes.length === 0) {
+    document.getElementById("noResults").style.display = "block";
+    return;
+  }
+
+  document.getElementById("noResults").style.display = "none";
+}
