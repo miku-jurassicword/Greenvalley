@@ -520,7 +520,7 @@ function salvarReceita() {
   };
 
   customList.push(novaReceita);
-  localStorage.setItem("nutrivida_custom", JSON.stringify(customList));
+  window.salvarReceitaFirebase(novaReceita);
 
   // mostra mensagem de sucesso e atualiza tudo
   document.getElementById("msgSucesso").style.display = "block";
@@ -567,7 +567,7 @@ function renderListaCustom() {
 }
 
 /* Deleta uma receita personalizada pelo ID */
-function deletarReceita(id) {
+function window.deletarReceitaFirebase(id); {
   if (!confirm("Tem certeza que quer deletar esta receita?")) return;
   let lista = carregarReceitasCustom();
   lista = lista.filter(r => r.id !== id); // remove a receita da lista
@@ -711,3 +711,23 @@ function renderRecipes() {
 
   document.getElementById("noResults").style.display = "none";
 }
+async function testarFirebase() {
+  await salvarReceita({
+    nome: "Teste",
+    categoria: "cafe",
+    ingredientes: "ovo, pão",
+    modo: "misturar"
+  });
+
+  console.log("🔥 Receita salva no Firestore!");
+}
+
+testarFirebase();
+async function carregarTudo() {
+  if (window.carregarReceitasFirebase) {
+    receitas = await window.carregarReceitasFirebase();
+    renderCards();
+  }
+}
+
+carregarTudo();
