@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriVida — Alimentação Saudável e Receitas</title>
+  <meta name="description" content="Descubra receitas saudáveis e dicas de alimentação equilibrada para transformar sua saúde e bem-estar." />
+
+  <!-- Fontes do Google: Nunito (texto geral) + Playfair Display (títulos) + Press Start 2P (jogo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Arquivo de estilos externo -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Ícone da aba do navegador (emoji inline) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>" />
+</head>
+<body>
+
+  <!-- =====================
+       CABEÇALHO FIXO
+       ===================== -->
+  <header>
+    <div class="header-inner">
+      <!-- Logo clicável que volta ao topo -->
+      <a href="#" class="logo"><span>🥗</span> NutriVida</a>
+
+      <!-- Links de navegação -->
+      <nav>
+        <a href="#receitas">Receitas</a>
+        <a href="#jogo">Horta</a>
+        <a href="#dicas">Dicas</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+
+      <!-- Barra de busca -->
+      <div class="header-search">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="searchInput" placeholder="Buscar receitas..." autocomplete="off" />
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================
+       HERO — topo da página
+       ===================== -->
+  <section class="hero">
+    <div class="hero-badge">🌿 Nutrição de verdade, para uma vida melhor</div>
+
+    <h1>Coma bem, viva <em>melhor</em> —<br>receitas que nutrem o corpo e a alma</h1>
+
+    <p>Mais de 15 receitas saudáveis, práticas e deliciosas para cada refeição do seu dia. Sem mistério, sem complicação.</p>
+
+    <!-- Botões de ação -->
+    <div class="hero-cta">
+      <a href="#receitas" class="btn-primary">🍽️ Ver Receitas</a>
+      <a href="#dicas"    class="btn-outline">💡 Dicas de Nutrição</a>
+    </div>
+
+    <!-- Números de destaque -->
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>15+</strong><span>Receitas Saudáveis</span></div>
+      <div class="hero-stat"><strong>4</strong><span>Categorias</span></div>
+      <div class="hero-stat"><strong>100%</strong><span>Ingredientes Naturais</span></div>
+      <div class="hero-stat"><strong>0g</strong><span>Industrializados</span></div>
+    </div>
+  </section>
+
+  <!-- =====================
+       FAIXA DE DICAS RÁPIDAS
+       ===================== -->
+  <div class="tips-strip">
+    <div class="tips-inner">
+
+      <div class="tip-item">
+        <div class="tip-icon teal">🥦</div>
+        <div>
+          <h4>Variedade é essencial</h4>
+          <p>Consuma alimentos de diferentes cores para garantir todos os nutrientes.</p>
+        </div>
+      </div>
+
+      <div class="tip-item">
+        <div class="tip-icon amber">💧</div>
+        <div>
+          <h4>Hidrate-se sempre</h4>
+          <p>Beba pelo menos 2 litros de água por dia para manter o organismo funcionando.</p>
+        </div>
+      </div>
+
+      <div class="tip-item">
+        <div class="tip-icon sky">⏰</div>
+        <div>
+          <h4>Refeições regulares</h4>
+          <p>Faça entre 5 e 6 refeições ao dia para manter o metabolismo ativo.</p>
+        </div>
+      </div>
+
+      <div class="tip-item">
+        <div class="tip-icon mint">🌾</div>
+        <div>
+          <h4>Prefira integrais</h4>
+          <p>Troque refinados por integrais para mais fibras e saciedade prolongada.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================
+       SEÇÃO DE RECEITAS
+       ===================== -->
+  <div id="receitas">
+
+    <!-- Título da seção -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-tag">🍴 Cardápio Saudável</div>
+        <h2>Receitas para cada momento do dia</h2>
+        <p>Do café da manhã ao jantar, temos opções nutritivas e saborosas para você</p>
+      </div>
+    </div>
+
+    <!-- Botões de filtro por categoria -->
+    <div class="filters-wrap">
+      <div class="filters">
+        <button class="filter-btn active" data-cat="todos">
+          🍽️ Todas <span class="count" id="count-todos"></span>
+        </button>
+        <button class="filter-btn" data-cat="cafe">
+          ☀️ Café da Manhã <span class="count" id="count-cafe"></span>
+        </button>
+        <button class="filter-btn" data-cat="almoco">
+          🌿 Almoço <span class="count" id="count-almoco"></span>
+        </button>
+        <button class="filter-btn" data-cat="jantar">
+          🌙 Jantar <span class="count" id="count-jantar"></span>
+        </button>
+        <button class="filter-btn" data-cat="lanche">
+          🍎 Lanches <span class="count" id="count-lanche"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid onde os cards aparecem (preenchido pelo app.js) -->
+    <div class="recipes-section">
+      <div class="recipes-grid" id="recipesGrid"></div>
+      <!-- Mensagem quando nenhuma receita é encontrada -->
+      <div class="no-results" id="noResults">
+        <div class="icon">🔍</div>
+        <h3>Nenhuma receita encontrada</h3>
+        <p>Tente buscar por outro ingrediente ou nome de receita.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================
+       MINIJOGO — HORTA NUTRI (estilo Stardew Valley)
+       Clique nas plantas para colher e aprender!
+       ============================================ -->
+  <section class="stardew-section" id="jogo">
+
+    <!-- Título em pixel font -->
+    <div class="game-title">🌱 Horta Nutri</div>
+    <p class="game-subtitle">Clique nas plantas prontas para colher e descobrir seus poderes!</p>
+
+    <!-- Placar de pontos de saúde -->
+    <div class="game-score" id="gameScore">
+      <span class="score-hearts">❤️❤️❤️❤️❤️🤍🤍🤍🤍🤍</span>
+      <span>SAÚDE: <span class="score-num">0</span> pts</span>
+    </div>
+
+    <!-- Grade de canteiros (preenchida pelo app.js) -->
+    <div class="garden-grid" id="gardenGrid"></div>
+
+    <!-- Balão com fato nutricional que aparece ao colher -->
+    <div class="fact-bubble empty" id="factBubble">
+      <p>Colha uma planta para descobrir seu superpoder nutricional! ✨</p>
+    </div>
+
+  </section>
+
+  <!-- =====================
+       DICAS DE NUTRIÇÃO
+       ===================== -->
+  <div id="dicas" class="tips-section">
+    <div class="section">
+      <div class="section-header">
+        <div class="section-tag">💡 Conhecimento</div>
+        <h2>Dicas para uma alimentação equilibrada</h2>
+        <p>Pequenas mudanças no seu dia a dia que fazem uma grande diferença na saúde</p>
+      </div>
+
+      <!-- Cards de dicas -->
+      <div class="tips-cards">
+
+        <div class="tip-card c1">
+          <div class="tip-card-icon">🥗</div>
+          <h3>Monte o prato certo</h3>
+          <p>Preencha metade do prato com vegetais, um quarto com proteínas e um quarto com carboidratos complexos para uma refeição equilibrada.</p>
+        </div>
+
+        <div class="tip-card c2">
+          <div class="tip-card-icon">🧂</div>
+          <h3>Reduza o sódio</h3>
+          <p>Substitua o sal refinado por ervas e especiarias naturais como alecrim, manjericão e açafrão. Seu coração agradece!</p>
+        </div>
+
+        <div class="tip-card c3">
+          <div class="tip-card-icon">🫐</div>
+          <h3>Power dos antioxidantes</h3>
+          <p>Frutas vermelhas, mirtilo e açaí são ricos em antioxidantes que combatem o envelhecimento celular e fortalecem o sistema imune.</p>
+        </div>
+
+        <div class="tip-card c4">
+          <div class="tip-card-icon">🧬</div>
+          <h3>Proteínas em cada refeição</h3>
+          <p>Inclua uma fonte de proteína em todas as refeições para manter a massa muscular, a saciedade e o metabolismo acelerado.</p>
+        </div>
+
+        <div class="tip-card c5">
+          <div class="tip-card-icon">🕐</div>
+          <h3>Coma devagar</h3>
+          <p>Mastigue bem cada garfada e faça refeições sem pressa. Leva 20 minutos para o cérebro receber o sinal de saciedade do estômago.</p>
+        </div>
+
+        <div class="tip-card c6">
+          <div class="tip-card-icon">🚫</div>
+          <h3>Evite ultraprocessados</h3>
+          <p>Prefira sempre alimentos com poucos ingredientes na lista. Se você não reconhece o ingrediente, seu corpo também não vai!</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================
+       SOBRE O SITE
+       ===================== -->
+  <div id="sobre" class="section" style="text-align:center">
+    <div class="section-header">
+      <div class="section-tag">🌱 Nossa Missão</div>
+      <h2>Por que comer bem é tudo</h2>
+      <p>A alimentação saudável não precisa ser sem graça ou difícil. O NutriVida existe para provar que é possível comer bem, com prazer e de forma acessível — todos os dias.</p>
+    </div>
+  </div>
+
+  <!-- =====================
+       RODAPÉ
+       ===================== -->
+  <footer>
+    <div class="footer-logo">🥗 NutriVida</div>
+    <p>Promovendo saúde e bem-estar através de uma alimentação equilibrada e saborosa para toda a família.</p>
+    <div class="footer-links">
+      <a href="#receitas">Receitas</a>
+      <a href="#jogo">Horta Nutri</a>
+      <a href="#dicas">Dicas de Nutrição</a>
+      <a href="#sobre">Sobre Nós</a>
+    </div>
+    <div class="footer-copy">© 2025 NutriVida — Feito com 💚 para quem ama saúde</div>
+  </footer>
+
+  <!-- =====================
+       MODAL DE RECEITA
+       (conteúdo preenchido pelo app.js)
+       ===================== -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modalContent" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <!-- ============================================
+       PAINEL DO DONO (admin)
+       Abrir com: Ctrl + Shift + A
+       Senha: nutrivida
+       Invisível para usuários normais!
+       ============================================ -->
+  <div class="admin-overlay" id="adminOverlay">
+    <div class="admin-box">
+
+      <!-- Cabeçalho do painel -->
+      <div class="admin-header">
+        <div>
+          <h2>🔐 Painel do Dono</h2>
+          <p>Adicione e gerencie receitas do site</p>
+        </div>
+        <button class="admin-close" onclick="fecharAdmin()">✕</button>
+      </div>
+
+      <!-- Conteúdo dinâmico (login ou formulário) -->
+      <div class="admin-body">
+        <div id="adminConteudo"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Arquivo JavaScript com toda a lógica -->
+  <script src="app.js"></script>
+
+</body>
+</html>
